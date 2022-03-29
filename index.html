@@ -90,6 +90,8 @@
         </div>
     </div>
 
+
+    <!------- c3 chart that I couldn't get to work ------->
 <!----    <div id="chart"></div>
     <script>
         var chart = c3.generate({
@@ -204,14 +206,15 @@
             //average
             function average(avgA){
                 var arrayLength = avgA.length
-                total = 0
-                while(arrayLength--){
+                var total = 0
+                while(arrayLength-- && arrayLength !== 0){
                     total += avgA[arrayLength]
                 }
-                return total
+                avg = total / recordedScores.length
+                return avg
             }
             average(recordedScores)
-            document.getElementById('avg').innerHTML = total / recordedScores.length
+            document.getElementById('avg').innerHTML = avg
 
             //total number of attempts
             document.getElementById("totalAttempts").innerHTML = numAttempts
